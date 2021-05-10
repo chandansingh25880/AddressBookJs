@@ -122,11 +122,23 @@ class Contact {
             throw "Invalid email";
     }
 
+
     toString() {
         return " [firstName=" + this.firstName + ", lastName=" + this.lastName + ", address=" + this.address + ", state="
                 + this.state + ", city=" + this.city + ", zipCode=" + this.zip + ", phoneNumber=" + this.phoneNumber + ", email=" + this.emailId + "]";
     }
+
+    /* @Description - to create a new address book array and add new contacts  */
+  try{
+        let detailsContact = new Array();
+        detailsContact.push(new Contact("Chandan", "Singh", "milling tonia road", "lucknow", "Up", "226001",
+            "91 8887719063", "chandan.1sep@gmail.com"));
+            detailsContact.push(new Contact("Siddhant", "Singh", "Indira nagar", "lucknow", "Up", "226001",
+            "91 8052636931", "siddhant20sep@gmail.com"));
+            detailsContact.push(new Contact("Amit", 'Sharma', 'GomtiNagar', 'Lucknow', 'Up', '226001',
+            '91 8452696969', 'amit@gmail.com'));
+            detailsContact.forEach((contact) => console.log(contact.toString()));
 }
-
-
-    
+catch (e) {
+    console.log('Regex test is fail \n' + e);
+}
