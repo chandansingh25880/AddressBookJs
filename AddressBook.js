@@ -162,7 +162,7 @@ class Contact {
         if (contact != null)
             return count++;
     }
-    detailsArray.reduce(findNumberOfContacts, 0);
+    detailsContact.reduce(findNumberOfContacts, 0);
     console.log(' Total number of contacts in array  : ' + count);
 }
 catch (e) {
