@@ -185,6 +185,20 @@ contactByCityArray.forEach(contact => console.log(contact.toString()))
 let contactByStateArray = detailsContact.filter(contact => contact.state == contactState).map(contact => contact);
 contactByStateArray.forEach(contact => console.log(contact.toString()));
 
+ /* @Description -  get the number of contact person i.e count by city or state */
+ function countContacts(count, contact) {
+    if (contact !== null)
+        count++;
+    return count;
+}
+
+let countByCity = detailsContact.filter(contact => contact.city !== null).map(contact => contact).reduce(countContacts, 0);
+console.log("Count by City " + countByCity);
+let countByState = detailsContact.filter(contact => contact.state !== null).map(contact => contact).reduce(countContacts, 0);
+console.log("Count by City " + countByState);
+
+}
+
 }
 
 catch (e) {
