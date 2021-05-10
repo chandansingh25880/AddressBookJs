@@ -164,7 +164,6 @@ let searchByCity = detailsContact.filter(contact => contact.city == searchCity).
 searchByCity();
 
  /* @Descreption - search  state by  name which is persent in  contact  */
-
 function countPersonByCity(countByState, contact) {
     if (contact != null)
         countByState++;
@@ -177,6 +176,15 @@ function searchByState() {
 let searchState = "up";
 let serchByState = detailsContact.filter(contact => contact.state == searchState).map(contact => contact).reduce(countPersonByCity, 0);
 searchByState();
+
+/*@Description - view person by city or state */
+let contactCity = "Noida";
+let contactState = "uttar pradesh";
+let contactByCityArray = detailsContact.filter(contact => contact.city == contactCity).map(contact => contact);
+contactByCityArray.forEach(contact => console.log(contact.toString()))
+let contactByStateArray = detailsContact.filter(contact => contact.state == contactState).map(contact => contact);
+contactByStateArray.forEach(contact => console.log(contact.toString()));
+
 }
 
 catch (e) {
