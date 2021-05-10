@@ -129,7 +129,8 @@ class Contact {
     }
 
     /* @Description - to create a new address book array and add new contacts  */
-  try{
+    /* To added new details for contact person using their name and edit it */
+    try {
         let detailsContact = new Array();
         detailsContact.push(new Contact("Chandan", "Singh", "milling tonia road", "lucknow", "Up", "226001",
             "91 8887719063", "chandan.1sep@gmail.com"));
@@ -137,8 +138,21 @@ class Contact {
             "91 8052636931", "siddhant20sep@gmail.com"));
             detailsContact.push(new Contact("Amit", 'Sharma', 'GomtiNagar', 'Lucknow', 'Up', '226001',
             '91 8452696969', 'amit@gmail.com'));
+        
+        
+            console.log('contacts before being updated \n');
             detailsContact.forEach((contact) => console.log(contact.toString()));
-}
-catch (e) {
-    console.log('Regex test is fail \n' + e);
-}
+            
+            detailsContact.filter(contact => contact.firstName = "Siddhant").map(contact => contact.firstName = "Sourya");
+            console.log('contacts after being updated \n');
+            detailsContact.forEach((contact) => console.log(contact.toString()));
+        
+            let index = detailsContact.findIndex(contact => contact.firstName = "Amit");
+            detailsContact.slice(index, 1);
+            console.log('address book after deleting contact ');
+            detailsContact.forEach((contact) => console.log(contact.toString()));
+        }
+        catch (e) {
+            console.log('Regex test is fail \n' + e);
+        }
+    
