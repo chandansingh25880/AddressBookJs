@@ -128,8 +128,10 @@ class Contact {
                 + this.state + ", city=" + this.city + ", zipCode=" + this.zip + ", phoneNumber=" + this.phoneNumber + ", email=" + this.emailId + "]";
     }
 
-    /* @Description - to create a new address book array and add new contacts  */
-    /* To added new details for contact person using their name and edit it */
+    /* @Description - To create a new address book array and add new contacts  
+     * To added new details for contact person using their name and edit it 
+     * slice method are used to delete contact by using person name  */
+
     try {
         let detailsContact = new Array();
         detailsContact.push(new Contact("Chandan", "Singh", "milling tonia road", "lucknow", "Up", "226001",
