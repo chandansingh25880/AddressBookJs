@@ -153,8 +153,32 @@ class Contact {
             detailsContact.slice(index, 1);
             console.log('address book after deleting contact ');
             detailsContact.forEach((contact) => console.log(contact.toString()));
-    }
-    
+
+   /* @Descreption - search  city by person name which is persent in  contact  */
+   function searchByCity() {
+    if (searchByCity == 0) console.log('Search not found by city name ' + searchCity);
+    else console.log("\n" + searchByCity + ' Search found by city name ' + searchCity);
+}
+let searchCity = "Lucknow";
+let searchByCity = detailsContact.filter(contact => contact.city == searchCity).map(contact => contact).reduce(countPersonByCity, 0);
+searchByCity();
+
+ /* @Descreption - search  state by  name which is persent in  contact  */
+
+function countPersonByCity(countByState, contact) {
+    if (contact != null)
+        countByState++;
+    return countByState;
+}
+function searchByState() {
+    if (serchByState == 0) console.log('Search not found by state name ' + searchState);
+    else console.log('\n '+ serchByState + ' Search found by state name ' + searchState);
+}
+let searchState = "up";
+let serchByState = detailsContact.filter(contact => contact.state == searchState).map(contact => contact).reduce(countPersonByCity, 0);
+searchByState();
+}
+
 catch (e) {
-    console.log('Regex test is fail \n' + e);
+console.log('Regex test is fail \n' + e);
 }
