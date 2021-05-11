@@ -154,6 +154,27 @@ class Contact {
             console.log('address book after deleting contact ');
             detailsContact.forEach((contact) => console.log(contact.toString()));
 
+           /*@discription:- To check the duplicate entry for same person */
+            function checkDuplicates(count, contact) {
+                if (contact != null)
+                    count++;
+                return count;
+            }
+        
+            function addContact() {
+                if (countDuplicate == 0) detailsContact.push(newContact);
+                else console.log("\nContact not added in the address book. Duplicate Entry found.\n");
+            }
+        
+            let countDuplicate = detailsContact.filter(contact => contact.firstName == newContact.firstName)
+            .map(contact => contact).reduce(checkDuplicates, 0);
+        
+            addContact();
+        
+            console.log('Checking duplicate while adding new contact in the address book ');
+            detailsArray.forEach((contact) => console.log(contact.toString()));
+        
+
    /* @Descreption - search  city by person name which is persent in  contact  */
    function searchByCity() {
     if (searchByCity == 0) console.log('Search not found by city name ' + searchCity);
